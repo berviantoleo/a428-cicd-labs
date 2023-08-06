@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # just to ensure the build
 ls build
-# use gh-pages npm
-npm install -g --silent gh-pages@5.0.0
+# set the target repo
+git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 ## run gh-pages, please ensure the jenkins have the permission
-gh-pages --message '[skip ci] Updates' --dist build
+npx gh-pages --message '[skip ci] Updates' --dist build

@@ -5,6 +5,10 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
+    environment {
+        GITHUB_TOKEN     = credentials('jenkins-github-token')
+        GITHUB_REPOSITORY = 'berviantoleo/a428-cicd-labs'
+    }
     stages {
         stage('Build') { 
             steps {
